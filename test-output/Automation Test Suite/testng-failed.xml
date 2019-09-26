@@ -3,11 +3,11 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Automation Test Suite]">
   <test thread-count="5" name="CreateNewPayeeRegression(failed)">
     <classes>
-      <class name="com.CBSCorporate.testcase.freecrm">
+      <class name="com.projectU.testcase.freecrm">
         <methods>
-          <include name="GlobalInitialization"/>
+          <include name="verify_Home_Page"/>
         </methods>
-      </class> <!-- com.CBSCorporate.testcase.freecrm -->
+      </class> <!-- com.projectU.testcase.freecrm -->
     </classes>
   </test> <!-- CreateNewPayeeRegression(failed) -->
 </suite> <!-- Failed suite [Automation Test Suite] -->

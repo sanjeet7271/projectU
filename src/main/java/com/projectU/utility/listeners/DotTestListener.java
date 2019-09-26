@@ -33,7 +33,6 @@ public class DotTestListener implements ITestListener,SeleniumFramework {
 	}
 
 	public void onStart(ITestContext arg0) {
-		// TODO Auto-generated method stub
 		ITestNGMethod[] test = arg0.getAllTestMethods();
 		System.out.println(test);
 		System.out.println("on test start");
@@ -41,18 +40,13 @@ public class DotTestListener implements ITestListener,SeleniumFramework {
 	}
 
 	public void onTestFailedButWithinSuccessPercentage(ITestResult arg0) {
-		// TODO Auto-generated method stub
 		
 	}
 
 	public void onTestFailure(ITestResult arg0) {
 
 		TestcaseConstant.TESTCASE_ENDTIME = dateUtility.getCurrentTime();
-		//ReportConstant.STEP.log(Status.FAIL," " + screen.takeSnapShot());
-		/*if (ReportConstant.HTML_REPORT.equalsIgnoreCase("Yes")) {
-			ReportConstant.STEP.log(Status.FAIL,screen.takeSnapShot());
-		}*/
-		String screenShotPath = "";
+		/*String screenShotPath = "";
 		logger.info("Step : " + TestcaseConstant.STEP_COUNTER + " : ");
 		if (SeleniumConstant.SCREEN_SHOT.equalsIgnoreCase("Yes")) {
 			screenShotPath = screenShot.takeSnapShot();
@@ -61,11 +55,10 @@ public class DotTestListener implements ITestListener,SeleniumFramework {
 			if (ReportConstant.HTML_REPORT.equalsIgnoreCase("Yes")) {
 				ReportConstant.STEP.log(Status.FAIL, "Test case failed here " + appendScreenshot);
 			}
-		} 
+		} */
 	}
 
 	public void onTestSkipped(ITestResult arg0) {
-		// TODO Auto-generated method stub
 		ReportConstant.STEP.log(Status.SKIP, arg0.getMethod().getMethodName() + "Test Case is skipped");
 	}
 
@@ -86,5 +79,19 @@ public class DotTestListener implements ITestListener,SeleniumFramework {
 	 */
 	public void onTestSuccess(ITestResult arg0) {
 		TestcaseConstant.TESTCASE_ENDTIME = dateUtility.getCurrentTime();
+		String screenShotPath = "";
+		logger.info("Step : " + TestcaseConstant.STEP_COUNTER + " : ");
+		if (SeleniumConstant.SCREEN_SHOT.equalsIgnoreCase("Yes")) {
+			screenShotPath = screenShot.takeSnapShot();
+			appendScreenshot = "<td>" + "<a href=\"" + FrameworkConstant.SCREENSHOT_LOCATION + File.separator
+					+ screenShotPath + "\">   Screenshot</a></td>";
+			if (ReportConstant.HTML_REPORT.equalsIgnoreCase("Yes")) {
+				ReportConstant.STEP.log(Status.PASS,"Test Case Pass here" + appendScreenshot);
+			}
+		} else {
+			if (ReportConstant.HTML_REPORT.equalsIgnoreCase("Yes")) {
+				ReportConstant.STEP.log(Status.PASS,"");
+			}
+		}
 	}
 }

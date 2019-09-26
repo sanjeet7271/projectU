@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
-  <test thread-count="5" name="Default test(failed)">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Automation Test Suite]">
+  <test thread-count="5" name="CreateNewPayeeRegression(failed)">
     <classes>
-      <class name="com.CBSCorporate.CBSCorporate">
+      <class name="com.projectU.testcase.freecrm">
         <methods>
-          <include name="ExecuteMain"/>
+          <include name="verify_Home_Page"/>
         </methods>
-      </class> <!-- com.CBSCorporate.CBSCorporate -->
+      </class> <!-- com.projectU.testcase.freecrm -->
     </classes>
-  </test> <!-- Default test(failed) -->
-</suite> <!-- Failed suite [Default suite] -->
+  </test> <!-- CreateNewPayeeRegression(failed) -->
+</suite> <!-- Failed suite [Automation Test Suite] -->

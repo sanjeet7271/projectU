@@ -28,8 +28,8 @@ public class PropertiesFiles {
 		logger.info(filePath + " Reading properties file.");
 		try {
 			InputStream input = PropertiesFiles.class.getClassLoader().getResourceAsStream(filePath);
-			if(input == null) {
-				Assert.fail("Properties file not found at "+filePath+" location.");
+			if (input == null) {
+				Assert.fail("Properties file not found at " + filePath + " location.");
 			}
 			Properties properties = new Properties();
 			properties.load(input);

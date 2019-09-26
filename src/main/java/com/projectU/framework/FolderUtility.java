@@ -6,9 +6,9 @@ import org.apache.commons.io.FileUtils;
 import org.apache.log4j.Logger;
 
 public class FolderUtility {
-	
+
 	private static Logger logger = Logger.getLogger(FolderUtility.class);
-	
+
 	/**
 	 * @author sanjeet.pandit
 	 * @Create New folder and delete folder if exist .
@@ -17,7 +17,7 @@ public class FolderUtility {
 	 */
 	public boolean checkAndCreateFolder(String folderName) {
 		File folder = new File(folderName);
-		logger.debug("Creating new folder "+folderName);
+		logger.debug("Creating new folder " + folderName);
 		try {
 			if (!folder.exists()) {
 				if (folder.mkdir()) {
@@ -39,7 +39,7 @@ public class FolderUtility {
 				}
 			}
 		} catch (Exception e) {
-			logger.error("Exception..!",e);
+			logger.error("Exception..!", e);
 			logger.error("Problem while creating folder " + folderName);
 			return false;
 		}

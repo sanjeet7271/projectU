@@ -3,13 +3,10 @@ package com.projectU.utility.selenium;
 import java.util.NoSuchElementException;
 import java.util.concurrent.TimeUnit;
 import java.util.function.Function;
-
-import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.FluentWait;
-
 import com.projectU.framework.constants.SeleniumConstant;
 import com.projectU.utility.reports.Report;
 
@@ -20,7 +17,6 @@ import com.projectU.utility.reports.Report;
  */
 public class Elements implements SeleniumFramework{
 
-	private static Logger logger = Logger.getLogger(Elements.class);
 	private SeleniumUtils seleniumUtils = new SeleniumUtils();
 	private static Elements instance = null;
 	

@@ -51,11 +51,4 @@ public class Utility implements SeleniumFramework {
 		}
 		return lists;
 	}
-	//removing data from list
-	/*public List<String> RemoveWebElementToString(List<WebElement> list) {
-		for (WebElement element : list) {
-			lists.remove(element);
-		}
-		return null;
-	}*/
 }

@@ -93,9 +93,9 @@ public class Setup implements SeleniumFramework {
 			ReportConstant.EXTENT.flush();
 		}
 		if (!(driver == null)) {
-			 TemporaryFilesystem tempFS = TemporaryFilesystem.getDefaultTmpFS();
-		     tempFS.deleteTemporaryFiles();
-		     driver.quit();
+			TemporaryFilesystem tempFS = TemporaryFilesystem.getDefaultTmpFS();
+			tempFS.deleteTemporaryFiles();
+			driver.quit();
 		}
 		browserutility.killProcess(SeleniumConstant.BROWSER_PID);
 	}

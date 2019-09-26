@@ -17,18 +17,16 @@ import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
-
 import com.projectU.framework.constants.FrameworkConstant;
 import com.projectU.framework.constants.ReportConstant;
 import com.projectU.framework.constants.SeleniumConstant;
-
 
 /**
  * 
  * @author Sanjeet.Pandit
  *
  */
-public class Driver{
+public class Driver {
 	private static Driver instance = null;
 	private WebDriver driver;
 	private List<String> processes = new ArrayList<String>();
@@ -63,6 +61,7 @@ public class Driver{
 		}
 
 	}
+
 	public static synchronized Driver getInstance() {
 
 		if (null == instance) {
@@ -197,14 +196,15 @@ public class Driver{
 		file = new File(classLoader.getResource(FrameworkConstant.GLOBALCONFIG.get("FIREFOX_DRIVER")).getFile());
 		System.setProperty("webdriver.gecko.driver", file.getAbsolutePath());
 		FirefoxProfile profile = new FirefoxProfile();
-		profile.setAcceptUntrustedCertificates(true);		
+		profile.setAcceptUntrustedCertificates(true);
 
 		fireFoxcapabilities.setBrowserName("firefox");
 		fireFoxcapabilities.setCapability("marionette", true);
-		//System.setProperty(FirefoxDriver.SystemProperty.DRIVER_USE_MARIONETTE, "false");
+		// System.setProperty(FirefoxDriver.SystemProperty.DRIVER_USE_MARIONETTE,
+		// "false");
 		fireFoxcapabilities.setCapability(CapabilityType.ForSeleniumServer.ENSURING_CLEAN_SESSION, true);
 		fireFoxcapabilities.setCapability(CapabilityType.UNEXPECTED_ALERT_BEHAVIOUR, UnexpectedAlertBehaviour.ACCEPT);
-		profile.setPreference("browser.private.browsing.autostart",true);
+		profile.setPreference("browser.private.browsing.autostart", true);
 		fireFoxcapabilities.setCapability(FirefoxDriver.PROFILE, profile);
 		return fireFoxcapabilities;
 

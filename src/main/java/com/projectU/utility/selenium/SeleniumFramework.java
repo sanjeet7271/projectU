@@ -38,6 +38,7 @@ public interface SeleniumFramework {
 	FolderUtility folderUtility = new FolderUtility();
 	BrowserProcessID browserutility = new BrowserProcessID();
 	PropertiesFiles prop = new PropertiesFiles();
+	BrokenLinks brokenLinks=new BrokenLinks();
 	
 	
 }

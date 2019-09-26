@@ -7,7 +7,7 @@ import org.testng.Assert;
 
 /**
  * 
- * @author Dhiraj.Bendale
+ * @author Sanjeet.Pandit
  *
  */
 public class AlertBox implements SeleniumFramework{

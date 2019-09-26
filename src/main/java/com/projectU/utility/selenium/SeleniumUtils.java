@@ -14,7 +14,7 @@ import com.projectU.framework.constants.SeleniumConstant;
  *
  */
 public class SeleniumUtils  implements SeleniumFramework{
-	private static Logger logger = Logger.getLogger(SeleniumUtils.class);
+	//private static Logger logger = Logger.getLogger(SeleniumUtils.class);
 	private WebDriverWait wait = new WebDriverWait(driver, SeleniumConstant.DEFAULTTIMEOUT);
 	private static SeleniumUtils instance = null;
 

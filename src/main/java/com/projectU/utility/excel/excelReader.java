@@ -4,18 +4,18 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 public class excelReader {
-	String xlFilePath = "./src/main/resources/testData/stops.xlsx";
-	String sheetName = "points";
+	String xlFilePath = "./src/main/java/com/projectU/utility/excel/data.xlsx";
+	String sheetName = "data";
 	ExcelSheetReader ProvideData=new ExcelSheetReader();
 	Object[][] data;
-	@DataProvider(name = "stops")
+	@DataProvider(name = "user")
 	public Object[][] CredentialtoLogin() throws Exception {
 		data = ProvideData.testData(xlFilePath, sheetName);
         return data;
 	}
-	@Test(dataProvider="stops")
-	public void stops(String lat, String lng){
-		System.out.println(data);
+	@Test(dataProvider="user")
+	public void userdetails(String username, String password, String city, String pin){
+		System.out.println("Username :"+username+"password :"+password+"City :"+city+"Pin :"+pin);
 		
 	}
 }

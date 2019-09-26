@@ -17,7 +17,6 @@ import com.projectU.utility.reports.ExtentManager;
  *
  */
 
-
 public class TestExecute {
 	@SuppressWarnings("deprecation")
 	public void executeXML(String xmlPath) {
@@ -30,7 +29,7 @@ public class TestExecute {
 		@SuppressWarnings("unused")
 		AnnotationTransformer annotation = new AnnotationTransformer();
 		testNG.addListener(testListener);
-		//testNG.setAnnotationTransformer(annotation);
+		// testNG.setAnnotationTransformer(annotation);
 		suite.add(absolutePath);
 		testNG.setTestSuites(suite);
 		testNG.run();
