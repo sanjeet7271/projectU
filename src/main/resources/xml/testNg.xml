@@ -2,7 +2,8 @@
 <suite name="Automation Test Suite">
 	<test name="CreateNewPayeeRegression">
 		<classes>
-      		<class name="com.projectU.testcase.freecrm"/>
+      		<!-- <class name="com.projectU.testcase.freecrm"/> -->
+      		<class name="com.projectU.testcase.TC_001_HomePage"/>
     </classes> 
     </test>
 </suite>

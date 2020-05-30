@@ -6,6 +6,7 @@ import java.util.function.Function;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.FluentWait;
 import com.projectU.framework.constants.SeleniumConstant;
 import com.projectU.utility.reports.Report;
@@ -19,7 +20,7 @@ public class Elements implements SeleniumFramework{
 
 	private SeleniumUtils seleniumUtils = new SeleniumUtils();
 	private static Elements instance = null;
-	
+	private Actions actions=new Actions(driver);
 	private Report report = new Report();
 
 	protected Elements() {
@@ -48,6 +49,12 @@ public class Elements implements SeleniumFramework{
 	 */
 	public boolean isElementPresentinTime(By elementLocator, int time) {
 		return seleniumUtils.isElementPresentinTime(elementLocator, time);
+	}
+	
+	public void hoverCurser(By elementLocator) {
+		WebElement element=driver.findElement(elementLocator);
+		actions.moveToElement(element).perform();
+		report.log("Hover to text ", "PASS", driver.findElement(elementLocator));
 	}
 
 	/**
